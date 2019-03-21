@@ -116,7 +116,7 @@ posvars = [
 	('-L', '@pos-6')
 ]
 
-file.write(".row { display:flex; }\n")
+file.write(".row { display:flex; flex-wrap:wrap; }\n")
 
 for x in [('t', 'start'), ('b', 'end'), ('c', 'center')] :
 	for y in [('l', 'start'), ('r', 'end'), ('c', 'center')] :
@@ -124,13 +124,17 @@ for x in [('t', 'start'), ('b', 'end'), ('c', 'center')] :
 	file.write("\n")
 file.write("\n")
 
-file.write(".column { display:flex; flex-direction:column; }\n")
+file.write(".column { display:flex; flex-wrap:wrap; flex-direction:column; }\n")
 
 for x in [('t', 'start'), ('b', 'end'), ('c', 'center')] :
 	for y in [('l', 'start'), ('r', 'end'), ('c', 'center')] :
 		file.write(".column-"+x[0]+"-"+y[0]+" { .column(); align-items:"+y[1]+"; justify-content:"+x[1]+"; }\n")
 	file.write("\n")
 file.write("\n")
+
+
+for s in posvars :
+	file.write(".space"+s[0]+" { & > * { .m("+s[1]+"/2); } }\n")
 
 for opt in [('h', 'l', 'r'), ('v', 't', 'b')] :
 	for s in posvars :

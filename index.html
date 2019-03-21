@@ -79,14 +79,116 @@
 
 	<h2>Le positionnement du contenu</h2>
 	<p>Pour positionner le contenu dans ces containers, il suffit d'y ajouter comme argument le positionnement vertical, puis horizontal. Par exemple, nommer sa row : <code>row-t-l</code> fera en sorte que la row positionne son contenu tn haut (<code>-t</code>) à gauche (<code>-l</code>). Exemples :</p>
-	<div class="row">
-		<div class="column-b-c">
-			
+	<div class="row-t-l Mw100p">
+		<div class="row-t-l space-h-S space-v-S">
+			<p><code>column-b-c</code> : </p>
+			<div class="column-b-c border padding-S">
+				<div class="blue white-t padding-S">Verticalement</div>
+				<div class="blue-dark white-t padding-S">en bas</div>
+				<div class="black-light white-t padding-S">Horizontalement</div>
+				<div class="black white-t padding-S">centrés</div>
+			</div>
 		</div>
-		<div class="row-c-c">
-			
+		<div class="row-t-l space-h-S space-v-S">
+			<p><code>row-c-c</code> : </p>
+			<div class="row-c-c padding-S border w450">
+				<div class="blue white-t padding-S">Verticalement</div>
+				<div class="blue-dark white-t padding-S">centrés</div>
+				<div class="black-light white-t padding-S">Horizontalement</div>
+				<div class="black white-t padding-S">aussi</div>
+			</div>
 		</div>
 	</div>
+	<div class="button blue" onclick="useAccordeon('content-a');">Voir le code</div>
+	<div class="accordeon column-t-l" id="content-a">
+		<p>Bas-centré :</p>
+		<pre class="code"><code>
+&ltdiv class="column-b-c border padding-S"&gt
+	&ltdiv class="blue white-t padding-S"&gtVerticalement&lt/div&gt
+	&ltdiv class="blue-dark white-t padding-S"&gten bas&lt/div&gt
+	&ltdiv class="black-light white-t padding-S"&gtHorizontalement&lt/div&gt
+	&ltdiv class="black white-t padding-S"&gtcentrés&lt/div&gt
+&lt/div&gt
+		</code></pre>
+		<p>Centré-centré :</p>
+		<pre class="code"><code>
+&ltdiv class="row-c-c padding-S border h100 w450"&gt
+	&ltdiv class="blue white-t padding-S"&gtVerticalement&lt/div&gt
+	&ltdiv class="blue-dark white-t padding-S"&gtcentrés&lt/div&gt
+	&ltdiv class="black-light white-t padding-S"&gtHorizontalement&lt/div&gt
+	&ltdiv class="black white-t padding-S"&gtaussi&lt/div&gt
+&lt/div&gt
+		</code></pre>
+	</div>
+	<h1>Fonctions usuelles</h1>
+	<p>Les fonctions usuelles sont des fonctions qui peuvent s'appliquer à n'importe quel objet.</p>
+
+	<h2>Padding / Margin</h2>
+	<p>Pour ceux qui ne sont pas dans le développement web, le <strong>padding</strong> représente la marge <strong>intérieure</strong> et <strong>margin</strong> la marge exterieure.</p>
+	<p>Afin d'appliquer ces attributs à vos éléments, ils vous suffit de donner l'attribut à modifier, suivi de la taille souhaitée. Par défaut, les tailles sont comme suit :</p>
+	<div class="row-t-l space-h-S">
+		<table class='shadow'>
+			<thead>
+				<tr>
+					<td>Nom</td><td>Valeur</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>-s</code></td><td>5px</td>
+				</tr>
+				<tr>
+					<td><code>-S</code></td><td>10px</td>
+				</tr>
+				<tr>
+					<td><code>-m</code></td><td>15px</td>
+				</tr>
+				<tr>
+					<td><code>-M</code></td><td>20px</td>
+				</tr>
+				<tr>
+					<td><code>-l</code></td><td>25px</td>
+				</tr>
+				<tr>
+					<td><code>-L</code></td><td>30px</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="column-t-l Mw500 padding-S">
+			<p>Ce qui donne par exemple <code>padding-S</code> pour définir une 'petite' marge interieure, ou bien <code>margin-L</code> pour définir une grande marge interieure. <a href="">En savoir plus</a></p>
+		</div>
+	</div>
+	<div class="button blue"onclick="useAccordeon('pm-a');">Exemples avec leur code :</div>
+	<div class="accordeon row-t-l Mw100p" id="pm-a">
+		<div class="column-t-l padding-s mw300 space-S">
+			<code>padding-S</code>
+			<div class="padding-S shadow">
+				<div class="blue white-t">Mon papa a du padding</div>
+			</div>
+			<p>Code :</p>
+			<pre class='code'><code>
+&ltdiv class="padding-S shadow"&gt
+	&ltdiv class="blue white-t"&gtMon papa a du padding&lt/div&gt
+&lt/div&gt
+			</code></pre>
+		</div>
+		<div class="column-t-l padding-s mw300 space-S">
+			<code>margin-L</code>
+			<div class="shadow">
+				<div class="blue white-t margin-L padding-S">Mais la j'ai du margin (et du padding)</div>
+			</div>
+			<p>Code :</p>
+			<pre class='code Mw400'><code>
+&ltdiv class="shadow"&gt
+	&ltdiv class="blue white-t margin-L padding-S"&gtMais la j'ai du margin (et du padding)&lt/div&gt
+&lt/div&gt
+			</code></pre>
+		</div>
+	</div>
+	<h2>Espacement</h2>
+	<p>Par espacement, j'entend l'espace entre les élements contenus. Il y a plusieurs manières de régler ça :</p>
+	<h3>Space</h3>
+	<p><strong>space</strong> utilise les même valeurs par défaut que margin et padding, et s'emploie de la même manière. Elle définit l'espace (de tous les côtés) qu'il doit y avoir entre les éléments. Il est aussi possible de <a href="">choisir le sens d'espacement</a>.</p>
 
 </div>
 
