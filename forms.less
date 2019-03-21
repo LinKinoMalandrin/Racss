@@ -1,0 +1,14 @@
+input[type='text'] {
+	border-radius:3px;
+	padding:7px 10px;
+	border:1px solid rgb(200, 200, 200);
+	&:hover { box-shadow:0 0 3px 1px rgba(0, 0, 0, .2) inset; }
+	&:focus { 
+		box-shadow:0 0 4px 0px @blue inset;
+		border:1px solid @blue;
+	}
+}
+
+button {
+	display:inline-block;
+}

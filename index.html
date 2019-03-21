@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test framework</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="testing.css">
+	<script type="text/javascript" src="js.js"></script>
+</head>
+<body>
+
+<div class="row-c-l split nav black-light white-t onscroll" id="navbar">
+	<div class="row-c-l left">
+		<div class="hamburger" onclick="toggle('links'); toggleThis(this);">
+			<div class='lines'></div>
+		</div>
+		<p>Framework</p>
+		<div class="line"></div>
+		<div class="links row-c-l space-h-S" id='links'>
+			<a href="">Download</a>
+			<a href="">In-depth documentation</a>
+			<a href="">About</a>
+		</div>
+	</div>
+	<div class="row-c-r space-h-S right">
+		<img src="git.png" alt="">
+	</div>
+</div>
+
+<div class="row-c-c black-t margin-t-L"><strong class='font-L'>WELCOME</strong></div>
+
+<div class="column-t-l white padding-L full-width space-v-S Mw1000" id="main">
+	
+	<h1>Présentation</h1>
+	<p>Ce framework (pour l'instant sans nom faut pas déconner) est un framework CSS / Javascript, qui utilise <a href="">Less</a> pour la compilation, et met à disposition des fonctions intégrées dans ce langage, il est donc conseillé d'utiliser ce framework CSS afin d'utiliser au mieux ce ce dernier.</p>
+	<p><strong>NB : </strong>Au passage, les bouts de code de <a href="">l'in-depth</a> sont aussi en Less, comme ça c'est dit.</p>
+
+	<h1>Les containers</h1>
+	<p>Je pense que vous connaissez <a href="">Bootstrap</a>. Et bien moi pas très bien, mais je pense qu'il existe cette notion aussi. Les containers sont des trucs qui en contiennent d'autres. Il y a deux types de containers :</p>
+	<h2>Row</h2>
+	<p>Si vous êtes bon en anglais, vous comprendrez qu'une row est une liste horizontale. C'est une 'rangée' pour être plus précis. Sans arguments, une row ressemble à ça :</p>
+	<div class="row">
+		<div class="black white-t padding-S">Ceci</div>
+		<div class="black-light white-t padding-S">est</div>
+		<div class="white-dark black-t padding-S">une</div>
+		<div class="white black-t padding-S">row</div>
+	</div>
+	
+	<div class="button blue" onclick="useAccordeon('row-code');">Voir le code</div>
+	<div class="accordeon column-t-l" id='row-code'>
+		<pre class="code"><code>
+&ltdiv class="row"&gt
+	&ltdiv class="black white-t padding-S"&gtCeci&lt/div&gt
+	&ltdiv class="black-light white-t padding-S"&gtest&lt/div&gt
+	&ltdiv class="white-dark black-t padding-S"&gtune&lt/div&gt
+	&ltdiv class="white black-t padding-S"&gtrow&lt/div&gt
+&lt/div&gt
+		</code></pre>
+	</div>
+	<h2>Column</h2>
+	<p>A l'inverse de son fier camarade row, column range les éléments de haut en bas (comme une colonne haha). Un petit exemple :</p>
+	<div class="column">
+		<div class="black white-t padding-S">Ceci</div>
+		<div class="black-light white-t padding-S">est</div>
+		<div class="white-dark black-t padding-S">une</div>
+		<div class="white black-t padding-S">column</div>
+	</div>
+	
+	<div class="button blue" onclick="useAccordeon('column-code');">Voir le code</div>
+	<div class="accordeon column-t-l" id='column-code'>
+		<pre class="code"><code>
+&ltdiv class="column"&gt
+	&ltdiv class="black white-t padding-S"&gtCeci&lt/div&gt
+	&ltdiv class="black-light white-t padding-S"&gtest&lt/div&gt
+	&ltdiv class="white-dark black-t padding-S"&gtune&lt/div&gt
+	&ltdiv class="white black-t padding-S"&gtcolumn&lt/div&gt
+&lt/div&gt
+		</code></pre>
+	</div>
+
+	<h2>Le positionnement du contenu</h2>
+	<p>Pour positionner le contenu dans ces containers, il suffit d'y ajouter comme argument le positionnement vertical, puis horizontal. Par exemple, nommer sa row : <code>row-t-l</code> fera en sorte que la row positionne son contenu tn haut (<code>-t</code>) à gauche (<code>-l</code>). Exemples :</p>
+	<div class="row">
+		<div class="column-b-c">
+			
+		</div>
+		<div class="row-c-c">
+			
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>

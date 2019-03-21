@@ -1,0 +1,51 @@
+@import 'h';
+@import 'general_more';
+
+*
+{
+	box-sizing:border-box;
+	.font-S();
+}
+
+body {
+	padding:0;
+	margin:0;
+	overflow-x:hidden;
+	background-color:white;
+	z-index:0;
+}
+
+.button{
+	padding:8px 11px;
+	border-radius:3px;
+	cursor:pointer;
+	border:none;
+	color:white;
+	display:inline-block;
+	.shadow();
+	&.red {
+		.red-d();
+	}
+}
+
+h1 { .font-L(); }
+h2 { .font-l(); }
+h3 { .font-M(); }
+h4 { .font-m(); }
+h5, h6, p { .font-S(); }
+
+.nav {
+	position:sticky;
+	top:0;
+	z-index:10;
+}
+
+ul { li { .padding-s(); } }
+
+body {
+	scroll-behavior:smooth;
+}
+
+a {
+	text-decoration:none; 
+}

@@ -1,0 +1,119 @@
+@import 'columns_more';
+
+.w(@width) { width:@width; }
+
+
+.h(@height) { height:@height; }
+
+.m		(@margin) 				{ margin:@margin; }
+.m-t	(@margin) 				{ margin-top:@margin; }
+.m-b	(@margin) 				{ margin-bottom:@margin; }
+.m-l	(@margin) 				{ margin-left:@margin; }
+.m-r	(@margin) 				{ margin-right:@margin; }
+.m-a	(@mt, @mr, @mb, @ml) 	{ margin:@mt @mr @mb @ml; }
+.m-s	(@mtb, @mlr) 			{ margin:@mtb @mlr; }
+
+.p		(@padding) 				{ padding:@padding; }
+.p-t 	(@padding) 				{ padding-top:@padding; }
+.p-b 	(@padding) 				{ padding-bottom:@padding; }
+.p-l 	(@padding) 				{ padding-left:@padding; }
+.p-r 	(@padding) 				{ padding-right:@padding; }
+.p-a 	(@pt, @pr, @pb, @pl) 	{ padding:@pt @pr @pb @pl; }
+.p-s 	(@ptb, @plr) 			{ padding:@ptb @plr; }
+
+@sense-h:~"&.container-b, &.container-t";
+@sense-v:~"&.container, &.container-r, &.container-l";
+
+@scr: ~"(max-width:";
+@een: ~")";
+
+.disapear-at(@width) {
+	@media @scr @width @een {
+		display:none;
+	}
+}
+
+.rounded {
+	&-b { border-radius:3px; }
+	&.row {
+		& > *:nth-child(1) { border-radius: 3px 0px 0px 3px; }
+		& > *:last-child { border-radius: 0px 3px 3px 0px; }
+	}
+	&.column { 
+		& > *:nth-child(1) { border-radius: 3px 3px 0px 0px; }
+		& > *:last-child { border-radius: 0px 0px 3px 3px; }
+	}
+}
+
+.split {
+	justify-content:space-between;
+}
+
+.self-width { display:inline-block; }
+.full-width { .w(100%); }
+
+.accordeon {
+	transform:scaleY(0);
+	transform-origin:top;
+	overflow:hidden;
+	position:absolute;
+	&.open {
+		animation:show-accordeon 0.2s;
+		position:static;
+		transform:scaleY(1);
+	}
+}
+
+@keyframes show-accordeon {
+	from { transform:scaleY(0); position:static;}
+	100% { transform:scaleY(1); }
+}
+
+.modal {
+	will-change:transform;
+	will-change:opacity;
+	position:fixed;
+	top:0;
+	left:0;
+	visibility:hidden;
+	background: rgba(0, 0, 0, .7);
+	transform:translateX(100vw);
+	width:100vw;
+	height:100vh;
+	.row-t-l();
+	justify-content:center;
+	align-items:start;
+	.p-t(100px);
+	animation:closemodal 0.4s;
+	&.open {
+		transform:translateX(0);
+		animation:openmodal 0.2s;
+	}
+
+	.body {
+		max-width:95%;
+		animation:unshowbody 0.4s;
+		will-change:transform;
+		.shadow();
+	}
+
+	&.open .body {
+		animation:showbody 0.4s;
+	}
+}
+@keyframes unshowbody {
+	from { transform:translateY(0); }
+	to { transform:translateY(-100vh); }
+}
+@keyframes showbody {
+	from { transform:translateY(-100vh); }
+	to { transform:translateY(0); }
+}
+@keyframes openmodal {
+	from { transform:translateX(0); opacity:0; }
+	to { transform:translateX(0); opacity:1; }
+}
+@keyframes closemodal {
+	from { transform:translateX(0); opacity:1; }
+	to { transform:translateX(0); opacity:0; }
+}

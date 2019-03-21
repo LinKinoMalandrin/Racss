@@ -1,0 +1,147 @@
+@import 'style';
+
+@font-face {
+	src:url("fira-regular.ttf");
+	font-family:"basic";
+}
+@font-face {
+	src:url("fira-bold.ttf");
+	font-family:"bold";
+}
+
+#navbar {
+	height:70px;
+	transition:height 0.2s;
+	will-change:height;
+	.p-s(0, 20px);
+	img { width:30px; height:30px; }
+	.shadow();
+	.left {
+		.hamburger { 
+			.hamburger(20px, 2px, @white);
+			display:none;
+			cursor:pointer;
+		}
+		.space-h-l();
+		.line {
+			will-change:margin;
+			width:2px;
+			height:30px; 
+			.m-s(0, 30px); 
+			.white-dark();
+		}
+		.links { transition:transform 0.2s; }
+	}
+
+	a { 
+		.white-t();
+		.white-dark-t-h();
+	}
+	&.scroll {
+		.line { .m-s(0, 10px); }
+		height:40px;
+		.left {
+			.space-h-S();
+		}
+	}
+
+	@media @scr 600px @een {
+		.hamburger{
+			display:flex !important;
+			z-index:50;
+		}
+		.links {
+			.column-t-l();
+			.w(300px);
+			position:fixed;
+			top:0;
+			left:0;
+			.h(100vh);
+			.p-s(15px, 15px);
+			.space-v-s();
+			.black-light();
+			margin:0 !important;
+			transform:translateX(-300px);
+			&.open {
+				transform:translateX(0);
+			}
+			& > *:nth-child(1) {
+				border-top:2px solid @white_dark;
+				padding-top:15px;
+			}
+			a {
+				transition:0.2s transform;
+				transform:translateY(60px);
+			}
+		}
+		&.scroll .links a {  }
+	}
+}
+
+.button {
+	display:inline-block;
+}
+
+
+@linkswidth:400px;
+* {
+	font-family:"basic";
+}
+#cross {
+	.cross(20px, 2px, black);
+}
+.code, code {
+	background:lighten(black, 20%);
+	color:white;
+	border-radius:3px;
+	.p-s(0, 4px);
+	.white-t();
+	.font-S();
+}
+h1 {
+	.m-t(50px) !important;
+	&::after{
+		content:"";
+		border-bottom:1px solid lighten(black, 50%);
+		display:block;
+		.w(100%);
+	}
+}
+h2 {
+	.m-t(30px) !important;
+}
+
+.accordeon {
+	border-top:1px solid lighten(black, 50%);
+	.p-s(@pos-2, 0);
+	@{open} { 
+		border-bottom:1px solid lighten(black, 50%); 
+	}
+}
+
+#test-centered-h {
+	& > div { .row-c-c; }
+	div:nth-child(1) { .h(30px); }
+	div:nth-child(2) { .h(50px); }
+	div:nth-child(3) { .h(40px); }
+	div:nth-child(4) { .h(60px); }
+}
+
+.border-inspect {
+	border:1px solid lighten(black, 50%);
+}
+
+p > a { .white-t(); .blue-d(); border-radius: 3px; .p-s(0px, 4px); }
+
+
+table {
+	@{head-cells} {
+		color:white;
+		.blue();
+		&:nth-child(1) { border-radius:3px 0 0 0; }
+		&:last-child { border-radius:0 3px 0 0; }
+	}
+	@{cells} {
+		.padding-s();
+	}
+}

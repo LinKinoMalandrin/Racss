@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.button {
+  padding: 8px 11px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+}
+.button.red {
+  background-color: #FF4956;
+  color: white;
+}
+.mt5 {
+  margin-top: 5px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mb5 {
+  margin-bottom: 5px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.container {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+.container.centered-h.sense-b,
+.container.centered-h.sense-t {
+  align-items: center;
+}
+.container.centered-h,
+.container.centered-h.sense-r,
+.container.centered-h.sense-l {
+  justify-content: center;
+}
+.container.centered-h.sense-b,
+.container.centered-h.sense-t {
+  justify-content: center;
+}
+.container.centered-h,
+.container.centered-h.sense-r,
+.container.centered-h.sense-l {
+  align-items: center;
+}
+.container.sense-r {
+  display: flex;
+  flex-direction: row;
+}
+.container.sense-b {
+  display: flex;
+  flex-direction: column;
+}
+.container.sense-l {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.container.sense-t {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.shadow {
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
+}
+.rounded {
+  border-radius: 3px;
+}
+.rounded > *:nth-child(1) {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.rounded > *:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+input[type='text'] {
+  padding: 7px 10px;
+  border: none;
+  border-bottom: 1px solid grey;
+}
+button {
+  display: inline-block;
+}
