@@ -1791,11 +1791,11 @@ table {
   border-collapse: collapse;
 }
 @font-face {
-  src: url("NotoSansJP-Regular.otf");
+  src: url("fonts/NotoSansJP-Regular.otf");
   font-family: "basic";
 }
 @font-face {
-  src: url("NotoSansJP-Bold.otf");
+  src: url("fonts/NotoSansJP-Bold.otf");
   font-family: "bold";
 }
 a {
@@ -1825,9 +1825,6 @@ a {
   justify-content: space-around;
   display: none;
   cursor: pointer;
-}
-#navbar .left .hamburger .lines {
-  transform: ;
 }
 #navbar .left .hamburger .lines,
 #navbar .left .hamburger .lines::after,
